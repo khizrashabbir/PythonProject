@@ -1,0 +1,10 @@
+{% extends "users/index.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% if user.is_authenticated %}
+  Hi {{ user.username }}!
+  <p><a href="{% url 'users:logout' %}">Log Out</a></p>
+{% else %}
+    <a href="{% url '/' %}"></a>
+{% endif %}
+{% endblock %}
